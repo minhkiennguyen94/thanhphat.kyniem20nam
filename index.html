@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Đại lễ kỷ niệm 20 năm Siêu thị Thành Phát – 27/11/2026</title>
-<meta property="og:title" content="Thư mời Đại lễ kỷ niệm 20 năm Siêu thị Thành Phát">
+<title>Lễ Kỷ niệm 20 năm Siêu thị Thành Phát – 27/11/2026</title>
+<meta property="og:title" content="Thư mời Lễ Kỷ niệm 20 năm Siêu thị Thành Phát">
 <meta property="og:description" content="20 Năm Vẹn Tròn Gắn Kết – Tự Hào Chung Một Mái Nhà">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600&family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,500&display=swap" rel="stylesheet">
 <style>
@@ -160,7 +160,7 @@
     <div class="emblem"><i></i><i></i><i></i><b>20</b>
       <span class="spark" style="top:6%;left:14%">✦</span><span class="spark" style="top:16%;right:8%;animation-delay:1s">✦</span><span class="spark" style="bottom:10%;left:8%;animation-delay:2s">✧</span><span class="spark" style="bottom:18%;right:14%;animation-delay:.6s">✦</span>
     </div>
-    <div class="eyebrow">Đại lễ kỷ niệm 20 năm · Siêu thị Thành Phát</div>
+    <div class="eyebrow">Lễ Kỷ niệm 20 năm · Siêu thị Thành Phát</div>
     <div class="slogan">20 Năm Vẹn Tròn Gắn Kết –<br>Tự Hào Chung Một Mái Nhà</div>
     <div class="count">
       <div><b id="d">--</b><span>Ngày</span></div><div><b id="h">--</b><span>Giờ</span></div>
@@ -184,7 +184,7 @@
 <section class="screen">
   <div class="inner reveal">
     <h2>Thời gian &amp; Địa điểm</h2><div class="divider"></div>
-    <p class="eyebrow" style="color:var(--c2)">Thứ Sáu · 27/11/2026 · 17:30</p>
+    <p class="eyebrow" style="color:var(--c2);font-size:clamp(24px,5.5vw,40px);font-weight:700;line-height:1.3;margin:6px 0 10px">Thứ Sáu · 27/11/2026 · 17:30</p>
     <p class="place">Trung Tâm Hội Nghị Tiệc Cưới Victory</p>
     <p class="addr">12 Mai Hắc Đế, TP. Buôn Ma Thuột, Đắk Lắk</p>
     <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Trung+T%C3%A2m+H%E1%BB%99i+Ngh%E1%BB%8B+Ti%E1%BB%87c+C%C6%B0%E1%BB%9Bi+Victory+12+Mai+H%E1%BA%AFc+%C4%90%E1%BA%BF+Bu%C3%B4n+Ma+Thu%E1%BB%99t">Xem bản đồ</a>
@@ -211,7 +211,7 @@
       <div><h3>🎟 Check-in &amp; rút thăm</h3><p>Mỗi người nhận 1 vé rút thăm may mắn khi check-in, ghim lên trang phục và giữ đến hết chương trình.</p></div>
       <div><h3>👨‍👩‍👧 Người thân &amp; trẻ em</h3><p>Chỉ vợ/chồng và con. Phụ huynh trông coi trẻ, không chạy nhảy trên sân khấu và khu kỹ thuật.</p></div>
       <div><h3>🤫 Văn minh sự kiện</h3><p>Tắt chuông điện thoại trong lễ khai mạc và vinh danh. Không hút thuốc trong hội trường, giữ gìn vệ sinh chung.</p></div>
-      <div class="warn"><h3>🚫 Đã uống rượu bia – tuyệt đối không tự lái xe</h3><p>Hãy đi taxi, xe công nghệ hoặc nhờ người thân không uống rượu bia chở về.</p></div>
+      <div class="warn"><h3>🚫 Đã uống rượu bia – tuyệt đối không tự lái xe</h3><p>Hãy đi taxi, xe công nghệ, đã uống rượu bia tuyệt đối không lái xe. Hãy trách nhiệm với bản thân và gia đình.</p></div>
     </div>
   </div>
 </section>
@@ -229,6 +229,8 @@
           <div><label>Chức vụ <i>*</i></label><select name="chuc_vu" required><option value="">-- Chọn --</option><option>Quản lý</option><option>Nhân viên</option></select></div>
           <div><label>Số điện thoại <i>*</i></label><input type="tel" name="sdt" required pattern="[0-9]{9,11}" inputmode="numeric" autocomplete="tel"></div>
         </div>
+        <label>Vị trí làm việc <i>*</i></label>
+        <select name="vi_tri" required><option value="">-- Chọn --</option><option>Bán hàng</option><option>Thu Ngân</option><option>Kế Toán</option><option>Sản Xuất</option><option>Nhà Hàng</option><option>Bảo Vệ</option></select>
         <label>Địa chỉ <i>*</i></label>
         <input type="text" name="dia_chi" required autocomplete="street-address">
         <label>Chi nhánh <i>*</i></label>
@@ -335,7 +337,7 @@ form.addEventListener("submit", async e => {
   try {
     if (!ENDPOINT) throw new Error("chưa cấu hình ENDPOINT");
     await fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(data) });
-    msg.className = "msg ok"; msg.textContent = "Đăng ký thành công! Hẹn gặp bạn tại đại lễ 27/11/2026.";
+    msg.className = "msg ok"; msg.textContent = "Đăng ký thành công! Hẹn gặp bạn tại Lễ Kỷ niệm 20 năm 27/11/2026.";
     form.reset(); render(0);
   } catch (err) {
     msg.className = "msg err"; msg.textContent = "Gửi thất bại: " + err.message;
